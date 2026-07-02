@@ -7,20 +7,20 @@ import { cn } from "@/lib/utils";
 
 const FAQS = [
   {
-    question: "Sản phẩm Helicorp có tác dụng phụ không?",
-    answer: "Tất cả sản phẩm của Helicorp đều được chiết xuất 100% từ thiên nhiên và đã qua kiểm định lâm sàng khắt khe, hoàn toàn không gây tác dụng phụ nếu sử dụng đúng liều lượng chỉ định.",
+    question: "Aura Vision có tương thích với kính cận không?",
+    answer: "Có, Aura Vision được thiết kế linh hoạt. Chúng tôi cung cấp phụ kiện Aura Prescription Lenses tích hợp nam châm từ tính, giúp bạn dễ dàng gắn tròng kính cận/viễn của riêng mình.",
   },
   {
-    question: "Bao lâu thì thấy được hiệu quả?",
-    answer: "Tùy vào cơ địa mỗi người, tuy nhiên với công nghệ hấp thụ Nano, hầu hết khách hàng của chúng tôi cảm nhận được sự thay đổi tích cực rõ rệt chỉ sau 7-14 ngày sử dụng liên tục.",
+    question: "Thời lượng pin thực tế là bao nhiêu?",
+    answer: "Với phiên bản Aura Vision Pro, thời lượng pin sử dụng liên tục lên đến 12 giờ. Phiên bản Aura Vision Air hỗ trợ 8 giờ sử dụng. Cả hai đều hỗ trợ sạc nhanh 65W.",
   },
   {
-    question: "Sản phẩm có dùng được cho phụ nữ có thai không?",
-    answer: "Đối với phụ nữ có thai và cho con bú, chúng tôi khuyên bạn nên tham khảo ý kiến bác sĩ trước khi sử dụng bất kỳ loại thực phẩm bổ sung nào để đảm bảo an toàn tuyệt đối.",
+    question: "Kính có thể kết nối với điện thoại thông minh nào?",
+    answer: "Aura Vision tương thích với hầu hết các điện thoại thông minh chạy iOS 15 trở lên và Android 12 trở lên thông qua kết nối Wi-Fi 7 và Bluetooth 5.3 độ trễ thấp.",
   },
   {
-    question: "Chính sách đổi trả của Helicorp như thế nào?",
-    answer: "Chúng tôi áp dụng chính sách hoàn tiền 100% trong vòng 30 ngày nếu bạn không hài lòng với chất lượng sản phẩm. Bạn chỉ cần giữ lại bao bì và liên hệ hotline hỗ trợ.",
+    question: "Chính sách bảo hành của NexGen Tech như thế nào?",
+    answer: "Chúng tôi bảo hành chính hãng 24 tháng cho toàn bộ phần cứng. Hỗ trợ đổi trả 1-1 trong 30 ngày đầu tiên nếu có bất kỳ lỗi nào từ nhà sản xuất.",
   },
 ];
 

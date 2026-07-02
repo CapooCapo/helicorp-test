@@ -4,8 +4,12 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { CartSidebar } from "@/components/ecommerce/CartSidebar";
-import { Chatbot } from "@/components/chatbot/Chatbot";
+import dynamic from "next/dynamic";
+
+const CartSidebar = dynamic(() => import("@/components/ecommerce/CartSidebar").then(mod => mod.CartSidebar));
+const Chatbot = dynamic(() => import("@/components/chatbot/Chatbot").then(mod => mod.Chatbot));
+import { AnalyticsProvider } from "@/components/layout/AnalyticsProvider";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -14,25 +18,25 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Healthy Living Corporation | Premium Health Products",
-    template: "%s | Helicorp",
+    default: "Aura Vision AR | Mở Khóa Tương Lai - NexGen Tech",
+    template: "%s | NexGen Tech",
   },
-  description: "Helicorp provides premium, modern health products to improve your lifestyle. Discover our selection of carefully curated items.",
-  keywords: ["Health", "Wellness", "Helicorp", "Healthy Living"],
-  authors: [{ name: "Healthy Living Corporation" }],
-  creator: "Helicorp",
+  description: "Khám phá Aura Vision AR - Chiếc kính thực tế ảo tăng cường đột phá nhất từ NexGen Tech. Trải nghiệm không giới hạn với màn hình 4K Micro-OLED.",
+  keywords: ["AR Glasses", "Kính AR", "NexGen Tech", "Aura Vision", "Công nghệ"],
+  authors: [{ name: "NexGen Tech" }],
+  creator: "NexGen Tech",
   openGraph: {
     type: "website",
     locale: "vi_VN",
-    url: "https://helicorp.vn",
-    title: "Healthy Living Corporation | Premium Health Products",
-    description: "Helicorp provides premium, modern health products to improve your lifestyle.",
-    siteName: "Helicorp",
+    url: "https://nexgentech.vn",
+    title: "Aura Vision AR | Mở Khóa Tương Lai",
+    description: "Trải nghiệm không giới hạn với màn hình 4K Micro-OLED từ chiếc kính thực tế ảo tăng cường đột phá nhất.",
+    siteName: "NexGen Tech",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Healthy Living Corporation",
-    description: "Premium health products for a modern lifestyle.",
+    title: "Aura Vision AR",
+    description: "Kính thực tế ảo tăng cường đột phá nhất từ NexGen Tech.",
   },
 };
 
@@ -50,6 +54,23 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning className={`${inter.variable} h-full scroll-smooth`}>
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-primary/20 selection:text-primary">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "NexGen Tech",
+              url: "https://nexgentech.vn",
+              logo: "https://nexgentech.vn/logo.png",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+84-999-888-777",
+                contactType: "customer service",
+              },
+            }),
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -60,7 +81,9 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <CartSidebar />
+          <AnalyticsProvider />
           <Chatbot />
+          <Toaster position="bottom-right" richColors />
         </ThemeProvider>
       </body>
     </html>

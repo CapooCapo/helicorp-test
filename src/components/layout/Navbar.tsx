@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
-import { ShoppingCart, Heart, Sun, Moon, Menu, X, Activity } from "lucide-react";
+import { ShoppingCart, Heart, Sun, Moon, Menu, X, Cpu, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCartStore } from "@/store/useCartStore";
 import { useFavoriteStore } from "@/store/useFavoriteStore";
@@ -21,7 +21,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const { theme, setTheme } = useTheme();
-  
+
   const cartItemsCount = useCartStore((state) => state.getTotalItems());
   const toggleCart = useCartStore((state) => state.toggleCart);
   const favoriteItemsCount = useFavoriteStore((state) => state.items.length);

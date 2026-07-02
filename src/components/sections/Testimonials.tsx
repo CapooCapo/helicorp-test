@@ -2,27 +2,28 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const TESTIMONIALS = [
   {
-    name: "Trần Anh Tuấn",
-    role: "Doanh Nhân",
-    content: "Từ khi sử dụng bộ sản phẩm Vita-Pure, sức khỏe của tôi cải thiện rõ rệt. Không còn cảm giác mệt mỏi vào cuối ngày dù công việc áp lực cao.",
+    name: "Marques Brownlee",
+    role: "Tech Reviewer",
+    content: "Aura Vision Pro đã thay đổi hoàn toàn cách tôi định nghĩa về thực tế tăng cường. Màn hình 4K sắc nét đến mức bạn quên mất mình đang đeo kính.",
     rating: 5,
   },
   {
     name: "Nguyễn Lê Vy",
-    role: "Giáo Viên",
-    content: "Tôi rất thích thành phần 100% hữu cơ của Helicorp. Omega-3 của hãng giúp mắt tôi sáng hơn và giảm hẳn tình trạng khô mắt do nhìn màn hình nhiều.",
+    role: "UI/UX Designer",
+    content: "Tôi có thể mở 3 màn hình ảo cùng lúc để làm việc mà không hề cảm thấy độ trễ. Thiết kế cực kỳ nhẹ và thoải mái cho cả ngày dài.",
     rating: 5,
   },
   {
     name: "Phạm Hoàng Vũ",
-    role: "Kỹ Sư Phần Mềm",
-    content: "Sản phẩm tốt, giao hàng nhanh. Trà thảo mộc Wellness giúp tôi ngủ ngon và sâu giấc hơn. Chắc chắn sẽ ủng hộ lâu dài.",
-    rating: 4,
+    role: "Game Developer",
+    content: "Khả năng tracking mắt và cử chỉ tay chính xác đáng kinh ngạc. Đây chính là thiết bị mà giới lập trình viên chúng tôi luôn chờ đợi.",
+    rating: 5,
   },
 ];
 
@@ -37,7 +38,7 @@ export function Testimonials() {
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
           >
-            Khách Hàng Nói Gì Về <span className="text-primary">Helicorp</span>?
+            Khách Hàng Nói Gì Về <span className="text-primary">Aura Vision</span>?
           </motion.h2>
         </div>
 
@@ -63,14 +64,15 @@ export function Testimonials() {
                     ))}
                   </div>
                   <p className="text-foreground/90 italic mb-8 relative z-10 text-lg">
-                    "{testimonial.content}"
+                    &quot;{testimonial.content}&quot;
                   </p>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full overflow-hidden border border-primary/20">
-                      <img 
+                    <div className="relative w-12 h-12 bg-primary/10 rounded-full overflow-hidden border border-primary/20">
+                      <Image 
                         src={`https://i.pravatar.cc/150?img=${index + 15}`} 
                         alt={testimonial.name} 
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                     </div>
                     <div>

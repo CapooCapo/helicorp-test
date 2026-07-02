@@ -5,9 +5,11 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2 } from "lucide-react";
+import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
+import { trackEvent } from "@/lib/useAnalytics";
 
 const newsletterSchema = z.object({
   email: z.string().min(1, { message: "Vui lòng nhập email" }).email({
@@ -18,7 +20,6 @@ const newsletterSchema = z.object({
 type NewsletterFormValues = z.infer<typeof newsletterSchema>;
 
 export function Newsletter() {
-  const [isSuccess, setIsSuccess] = React.useState(false);
   
   const form = useForm<NewsletterFormValues>({
     resolver: zodResolver(newsletterSchema),
@@ -28,16 +29,33 @@ export function Newsletter() {
   });
 
   const onSubmit = async (data: NewsletterFormValues) => {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log("Newsletter subscribed:", data.email);
-    setIsSuccess(true);
-    form.reset();
-    
-    // Reset success message after 3 seconds
-    setTimeout(() => {
-      setIsSuccess(false);
-    }, 3000);
+    try {
+      const res = await fetch("/api/webhook", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        toast.success("Đăng ký thành công!", {
+          description: "Cảm ơn bạn đã quan tâm đến bản tin của chúng tôi.",
+        });
+        trackEvent("newsletter_submit", { email: data.email });
+        form.reset();
+      } else {
+        const errorData = await res.json();
+        toast.error("Lỗi đăng ký", {
+          description: errorData.error || "Có lỗi xảy ra, vui lòng thử lại.",
+        });
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Lỗi kết nối", {
+        description: "Không thể kết nối đến máy chủ.",
+      });
+    }
   };
 
   return (
@@ -101,16 +119,6 @@ export function Newsletter() {
                 </Button>
               </div>
 
-              {isSuccess && (
-                <motion.div 
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="absolute -bottom-10 left-0 right-0 flex items-center justify-center gap-2 text-green-200 font-medium"
-                >
-                  <CheckCircle2 className="h-4 w-4" />
-                  Đăng ký thành công!
-                </motion.div>
-              )}
             </form>
           </motion.div>
         </div>

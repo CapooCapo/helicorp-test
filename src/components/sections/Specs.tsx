@@ -6,34 +6,34 @@ import { Check, Minus } from "lucide-react";
 
 const SPECS_DATA = [
   {
-    feature: "Chứng nhận FDA",
+    feature: "Màn hình 4K Micro-OLED",
     helicorp: true,
     others: false,
   },
   {
-    feature: "Thành phần 100% hữu cơ",
+    feature: "Tần số quét 120Hz",
     helicorp: true,
     others: false,
   },
   {
-    feature: "Không chứa Gluten & Non-GMO",
-    helicorp: true,
-    others: true,
-  },
-  {
-    feature: "Công nghệ hấp thụ Nano",
+    feature: "Trọng lượng dưới 150g",
     helicorp: true,
     others: false,
   },
   {
-    feature: "Bao bì tái chế sinh học",
+    feature: "Theo dõi chuyển động mắt (Eye Tracking)",
     helicorp: true,
     others: false,
   },
   {
-    feature: "Sản xuất tại nhà máy GMP",
+    feature: "Hỗ trợ kết nối Wi-Fi 7",
     helicorp: true,
-    others: true,
+    others: false,
+  },
+  {
+    feature: "Pin hoạt động liên tục 12h",
+    helicorp: true,
+    others: false,
   },
 ];
 
@@ -48,7 +48,7 @@ export function Specs() {
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
           >
-            Sự Khác Biệt <span className="text-primary">Vượt Trội</span>
+            Thông Số Kỹ Thuật <span className="text-primary">Vượt Trội</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export function Specs() {
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-foreground"
           >
-            So sánh tiêu chuẩn kỹ thuật và chất lượng giữa các sản phẩm Helicorp so với thị trường.
+            So sánh tiêu chuẩn phần cứng và tính năng của Aura Vision so với các dòng kính AR khác trên thị trường.
           </motion.p>
         </div>
 
@@ -75,7 +75,7 @@ export function Specs() {
                   Tiêu Chuẩn / Tính Năng
                 </th>
                 <th className="py-4 px-6 bg-primary/10 border-b border-primary/20 font-bold text-primary text-center text-lg w-1/4">
-                  Helicorp
+                  Aura Vision
                 </th>
                 <th className="py-4 px-6 bg-muted/50 rounded-tr-xl border-b border-border font-semibold text-center text-lg w-1/4">
                   Khác
@@ -83,7 +83,7 @@ export function Specs() {
               </tr>
             </thead>
             <tbody>
-              {SPECS_DATA.map((spec, index) => (
+              {SPECS_DATA.map((spec) => (
                 <tr key={spec.feature} className="border-b border-border last:border-0 hover:bg-muted/20 transition-colors">
                   <td className="py-4 px-6 text-foreground font-medium">
                     {spec.feature}

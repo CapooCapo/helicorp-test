@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import { Activity, Shield, Box, Zap, Heart, Star } from "lucide-react";
 
 const LOGOS = [
-  { name: "MediCare", icon: Activity },
-  { name: "HealthGuard", icon: Shield },
-  { name: "NutriBox", icon: Box },
-  { name: "VitaZap", icon: Zap },
-  { name: "LifeHeart", icon: Heart },
-  { name: "StarPharma", icon: Star },
+  { name: "Qualcomm", icon: Activity },
+  { name: "Sony Display", icon: Shield },
+  { name: "Zeiss", icon: Box },
+  { name: "Corning", icon: Zap },
+  { name: "Nvidia", icon: Heart },
+  { name: "Epic Games", icon: Star },
 ];
 
 export function LogoCloud() {
@@ -18,7 +18,7 @@ export function LogoCloud() {
     <section className="py-12 bg-muted/50 border-y border-border">
       <div className="container mx-auto px-4 md:px-6">
         <p className="text-center text-sm font-medium text-muted-foreground mb-8">
-          ĐỐI TÁC TIN CẬY CỦA HƠN 500+ PHÒNG KHÁM VÀ BỆNH VIỆN
+          ĐỐI TÁC CÔNG NGHỆ HÀNG ĐẦU THẾ GIỚI
         </p>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
           {LOGOS.map((logo, index) => {

@@ -7,11 +7,11 @@ import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const BENEFITS = [
-  "Cải thiện chất lượng giấc ngủ và giảm căng thẳng.",
-  "Tăng cường hệ miễn dịch tự nhiên của cơ thể.",
-  "Bảo vệ và duy trì sức khỏe tim mạch.",
-  "Làm chậm quá trình lão hóa cấp tế bào.",
-  "Tăng cường năng lượng và khả năng tập trung.",
+  "Không gian làm việc vô hạn với đa màn hình ảo.",
+  "Trải nghiệm xem phim rạp IMAX ngay tại nhà.",
+  "Tích hợp trợ lý AI thông minh xử lý mọi tác vụ.",
+  "Thiết kế công thái học thoải mái khi đeo lâu.",
+  "Bảo mật quyền riêng tư với công nghệ quét mống mắt.",
 ];
 
 export function Benefits() {
@@ -19,7 +19,7 @@ export function Benefits() {
     <section id="benefits" className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Image Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -30,11 +30,11 @@ export function Benefits() {
           >
             {/* Background blob */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent/10 rounded-full blur-3xl -z-10"></div>
-            
+
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5] md:aspect-square lg:aspect-[4/5] border border-border">
               <Image
-                src="/images/hero.png" // Reusing hero image or another placeholder
-                alt="Health Benefits"
+                src="/images/images.jpg"
+                alt="Aura Vision AR"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                 className="object-cover object-center"
@@ -50,8 +50,8 @@ export function Benefits() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="absolute bottom-8 -right-4 sm:-right-8 bg-background p-6 rounded-2xl shadow-xl border border-border"
             >
-              <div className="text-4xl font-bold text-primary mb-1">98%</div>
-              <p className="text-sm text-muted-foreground font-medium">Khách hàng cảm thấy<br/>khỏe hơn sau 1 tháng</p>
+              <div className="text-4xl font-bold text-primary mb-1">99%</div>
+              <p className="text-sm text-muted-foreground font-medium">Người dùng hài lòng<br />với trải nghiệm AR</p>
             </motion.div>
           </motion.div>
 
@@ -65,11 +65,11 @@ export function Benefits() {
           >
             <div>
               <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
-                Đầu Tư Cho <span className="text-primary">Sức Khỏe</span>,<br /> Đầu Tư Cho Tương Lai
+                Khai Phóng <span className="text-primary">Sức Mạnh</span>,<br /> Nâng Tầm Trải Nghiệm
               </h2>
               <p className="text-lg text-muted-foreground">
-                Chúng tôi tin rằng sức khỏe là tài sản quý giá nhất. Các sản phẩm của Helicorp 
-                được thiết kế để mang lại những lợi ích thiết thực và lâu dài cho cơ thể bạn.
+                Aura Vision không chỉ là một thiết bị, nó là cánh cửa mở ra thế giới thực tế tăng cường
+                nơi năng suất làm việc và giải trí không còn giới hạn.
               </p>
             </div>
 
@@ -90,7 +90,7 @@ export function Benefits() {
             </ul>
 
             <Button size="lg" className="mt-8">
-              Bắt Đầu Hành Trình Khỏe Mạnh
+              Khám Phá Kỷ Nguyên Mới
             </Button>
           </motion.div>
 

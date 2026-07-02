@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { askGemini, ChatMessage } from "@/lib/gemini";
+import { trackEvent } from "@/lib/useAnalytics";
 
 const SUGGESTED_QUESTIONS = [
   "Giá sản phẩm là bao nhiêu?",
@@ -42,7 +43,7 @@ export function Chatbot() {
 
     // Add user message
     const userMessage: ChatMessage = {
-      id: Date.now().toString(),
+      id: crypto.randomUUID(),
       role: "user",
       content: messageText,
     };
@@ -52,19 +53,20 @@ export function Chatbot() {
     setInput("");
     setError(null);
     setIsLoading(true);
+    trackEvent("chatbot_message", { content: messageText });
 
     try {
       const aiResponseText = await askGemini(newMessages);
 
       const aiMessage: ChatMessage = {
-        id: (Date.now() + 1).toString(),
+        id: crypto.randomUUID(),
         role: "model",
         content: aiResponseText,
       };
 
       setMessages((prev) => [...prev, aiMessage]);
-    } catch (err: any) {
-      setError(err.message || "Đã xảy ra lỗi khi kết nối. Vui lòng thử lại.");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Đã xảy ra lỗi khi kết nối. Vui lòng thử lại.");
     } finally {
       setIsLoading(false);
     }
@@ -97,14 +99,14 @@ export function Chatbot() {
       const aiResponseText = await askGemini(messages);
 
       const aiMessage: ChatMessage = {
-        id: Date.now().toString(),
+        id: crypto.randomUUID(),
         role: "model",
         content: aiResponseText,
       };
 
       setMessages((prev) => [...prev, aiMessage]);
-    } catch (err: any) {
-      setError(err.message || "Đã xảy ra lỗi khi kết nối. Vui lòng thử lại.");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Đã xảy ra lỗi khi kết nối. Vui lòng thử lại.");
     } finally {
       setIsLoading(false);
     }
@@ -118,7 +120,10 @@ export function Chatbot() {
           "fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center hover:scale-110 transition-transform focus:outline-none cursor-pointer",
           isOpen && "hidden"
         )}
-        onClick={() => setIsOpen(true)}
+        onClick={() => {
+          setIsOpen(true);
+          trackEvent("chatbot_open");
+        }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
