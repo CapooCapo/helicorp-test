@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Heart, ShoppingCart, Eye, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -91,7 +91,7 @@ export function Products() {
             const isImageLoaded = !!loadedImages[product.id];
 
             return (
-              <motion.div
+              <m.div
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -204,7 +204,7 @@ export function Products() {
                     </Button>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

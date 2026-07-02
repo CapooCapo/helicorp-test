@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Check, Minus } from "lucide-react";
 
 const SPECS_DATA = [
@@ -42,15 +42,15 @@ export function Specs() {
     <section className="py-24 bg-background border-y border-border">
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <div className="text-center mb-12">
-          <motion.h2 
+          <m.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
           >
             Thông Số Kỹ Thuật <span className="text-primary">Vượt Trội</span>
-          </motion.h2>
-          <motion.p 
+          </m.h2>
+          <m.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
@@ -58,10 +58,10 @@ export function Specs() {
             className="text-lg text-muted-foreground"
           >
             So sánh tiêu chuẩn phần cứng và tính năng của Aura Vision so với các dòng kính AR khác trên thị trường.
-          </motion.p>
+          </m.p>
         </div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -50px 0px" }}
@@ -106,7 +106,7 @@ export function Specs() {
               ))}
             </tbody>
           </table>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

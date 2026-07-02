@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -21,7 +21,7 @@ export function Benefits() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
           {/* Image Side */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
@@ -43,7 +43,7 @@ export function Benefits() {
             </div>
 
             {/* Floating Stat */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "0px 0px -50px 0px" }}
@@ -52,11 +52,11 @@ export function Benefits() {
             >
               <div className="text-4xl font-bold text-primary mb-1">99%</div>
               <p className="text-sm text-muted-foreground font-medium">Người dùng hài lòng<br />với trải nghiệm AR</p>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
           {/* Content Side */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
@@ -75,7 +75,7 @@ export function Benefits() {
 
             <ul className="space-y-4">
               {BENEFITS.map((benefit, index) => (
-                <motion.li
+                <m.li
                   key={index}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -85,14 +85,14 @@ export function Benefits() {
                 >
                   <CheckCircle2 className="h-6 w-6 text-primary shrink-0" />
                   <span className="text-foreground font-medium text-lg">{benefit}</span>
-                </motion.li>
+                </m.li>
               ))}
             </ul>
 
             <Button size="lg" className="mt-8">
               Khám Phá Kỷ Nguyên Mới
             </Button>
-          </motion.div>
+          </m.div>
 
         </div>
       </div>

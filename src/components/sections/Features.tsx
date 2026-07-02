@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/image";
 import { MonitorPlay, Cpu, Battery, Wifi, Eye, Glasses } from "lucide-react";
 
@@ -55,15 +55,15 @@ export function Features() {
     <section id="features" className="bg-background relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto py-24 mb-16">
-          <motion.h2 
+          <m.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
           >
             Đột Phá Công Nghệ <span className="text-primary">Aura Vision</span>
-          </motion.h2>
-          <motion.p 
+          </m.h2>
+          <m.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
@@ -71,7 +71,7 @@ export function Features() {
             className="text-lg text-muted-foreground"
           >
             Sự kết hợp hoàn hảo giữa thiết kế thời trang đỉnh cao và phần cứng mạnh mẽ nhất từng được tạo ra trên một thiết bị đeo thông minh.
-          </motion.p>
+          </m.p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12 items-start relative pb-32">
@@ -92,7 +92,7 @@ export function Features() {
             {FEATURES.map((feature) => {
               const Icon = feature.icon;
               return (
-                <motion.div
+                <m.div
                   key={feature.title}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -107,7 +107,7 @@ export function Features() {
                   <p className="text-xl text-muted-foreground leading-relaxed">
                     {feature.description}
                   </p>
-                </motion.div>
+                </m.div>
               );
             })}
           </div>

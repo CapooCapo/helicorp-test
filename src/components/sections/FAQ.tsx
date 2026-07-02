@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -31,21 +31,21 @@ export function FAQ() {
     <section id="faq" className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6 max-w-3xl">
         <div className="text-center mb-12">
-          <motion.h2 
+          <m.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
           >
             Câu Hỏi <span className="text-primary">Thường Gặp</span>
-          </motion.h2>
+          </m.h2>
         </div>
 
         <div className="space-y-4">
           {FAQS.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export function FAQ() {
                 </button>
                 <AnimatePresence>
                   {isOpen && (
-                    <motion.div
+                    <m.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -79,10 +79,10 @@ export function FAQ() {
                       <div className="px-6 pb-6 text-muted-foreground">
                         {faq.answer}
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

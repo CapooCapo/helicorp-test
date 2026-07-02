@@ -3,13 +3,14 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import dynamic from "next/dynamic";
+import { AnalyticsProvider } from "@/components/layout/AnalyticsProvider";
+import { MotionProvider } from "@/components/layout/MotionProvider";
 
 const CartSidebar = dynamic(() => import("@/components/ecommerce/CartSidebar").then(mod => mod.CartSidebar));
 const Chatbot = dynamic(() => import("@/components/chatbot/Chatbot").then(mod => mod.Chatbot));
-import { AnalyticsProvider } from "@/components/layout/AnalyticsProvider";
-import { Toaster } from "sonner";
+const Footer = dynamic(() => import("@/components/layout/Footer").then(mod => mod.Footer));
+const Toaster = dynamic(() => import("sonner").then(mod => mod.Toaster));
 
 const inter = Inter({
   variable: "--font-inter",
@@ -77,13 +78,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <CartSidebar />
-          <AnalyticsProvider />
-          <Chatbot />
-          <Toaster position="bottom-right" richColors />
+          <MotionProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <CartSidebar />
+            <AnalyticsProvider />
+            <Chatbot />
+            <Toaster position="bottom-right" richColors />
+          </MotionProvider>
         </ThemeProvider>
       </body>
     </html>
