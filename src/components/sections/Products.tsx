@@ -20,7 +20,7 @@ const MOCK_PRODUCTS: Product[] = [
     name: "Aura Vision Pro",
     description: "Phiên bản cao cấp với màn hình 4K Micro-OLED và chip Neural Processing mạnh nhất.",
     price: 34990000,
-    image: "/images/ar_glasses_pro.png",
+    image: "/images/auravisonpro.png",
     rating: 4.9,
     reviews: 1240,
     category: "Kính AR",
@@ -31,7 +31,7 @@ const MOCK_PRODUCTS: Product[] = [
     name: "Aura Vision Air",
     description: "Trải nghiệm AR mượt mà trong một thiết kế siêu nhẹ chỉ 130g, lý tưởng cho giải trí.",
     price: 21990000,
-    image: "/images/ar_glasses_air.png",
+    image: "/images/auravisonair.jpg",
     rating: 4.8,
     reviews: 856,
     category: "Kính AR",
@@ -49,10 +49,10 @@ const MOCK_PRODUCTS: Product[] = [
   },
   {
     id: "p4",
-    name: "Aura Prescription Lenses",
+    name: "Aura Prescription",
     description: "Tròng kính cận viễn tùy chỉnh chính hãng, tích hợp nam châm tháo lắp từ tính siêu nhanh.",
     price: 2500000,
-    image: "/images/ar_glasses_pro.png",
+    image: "/images/auraPrescription.png",
     rating: 4.9,
     reviews: 210,
     category: "Phụ kiện",
@@ -62,7 +62,7 @@ const MOCK_PRODUCTS: Product[] = [
 export function Products() {
   const [selectedProduct, setSelectedProduct] = React.useState<Product | null>(null);
   const [loadedImages, setLoadedImages] = React.useState<Record<string, boolean>>({});
-  
+
   const addItem = useCartStore((state) => state.addItem);
   const toggleFavorite = useFavoriteStore((state) => state.toggleFavorite);
   const favoriteItems = useFavoriteStore((state) => state.items);
@@ -78,7 +78,7 @@ export function Products() {
               Hệ Sinh Thái <span className="text-primary">NexGen</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Khám phá các phiên bản Aura Vision và phụ kiện tương thích, 
+              Khám phá các phiên bản Aura Vision và phụ kiện tương thích,
               đưa trải nghiệm thực tế tăng cường của bạn lên một tầm cao mới.
             </p>
           </div>
@@ -89,7 +89,7 @@ export function Products() {
           {MOCK_PRODUCTS.map((product, index) => {
             const isFav = favoriteItems.some((item) => item.id === product.id);
             const isImageLoaded = !!loadedImages[product.id];
-            
+
             return (
               <motion.div
                 key={product.id}
@@ -126,7 +126,7 @@ export function Products() {
                   {product.isNew && <Badge>Mới</Badge>}
                   {product.isFeatured && <Badge variant="secondary">Bán Chạy</Badge>}
                 </div>
-                
+
                 {/* Image */}
                 <div className="relative aspect-square bg-muted/20 p-6 overflow-hidden flex items-center justify-center">
                   {/* Skeleton */}
@@ -142,12 +142,12 @@ export function Products() {
                     className={cn("object-contain group-hover:scale-105 transition-transform duration-500", !isImageLoaded && "opacity-0")}
                     onLoad={() => setLoadedImages(prev => ({ ...prev, [product.id]: true }))}
                   />
-                  
+
                   {/* Quick Actions Hover */}
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                    <Button 
-                      size="icon" 
-                      variant="secondary" 
+                    <Button
+                      size="icon"
+                      variant="secondary"
                       className="rounded-full hover:bg-primary hover:text-primary-foreground"
                       onClick={() => {
                         addItem(product);
@@ -156,9 +156,9 @@ export function Products() {
                     >
                       <ShoppingCart className="h-4 w-4" />
                     </Button>
-                    <Button 
-                      size="icon" 
-                      variant="secondary" 
+                    <Button
+                      size="icon"
+                      variant="secondary"
                       className="rounded-full hover:bg-primary hover:text-primary-foreground"
                       onClick={() => {
                         setSelectedProduct(product);
@@ -167,9 +167,9 @@ export function Products() {
                     >
                       <Eye className="h-4 w-4" />
                     </Button>
-                    <Button 
-                      size="icon" 
-                      variant="secondary" 
+                    <Button
+                      size="icon"
+                      variant="secondary"
                       className={cn("rounded-full hover:bg-primary hover:text-primary-foreground", isFav && "text-red-500")}
                       onClick={() => {
                         toggleFavorite(product);
@@ -194,9 +194,9 @@ export function Products() {
                     <span className="font-bold text-primary">
                       {new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(product.price)}
                     </span>
-                    <Button 
-                      size="sm" 
-                      variant="ghost" 
+                    <Button
+                      size="sm"
+                      variant="ghost"
                       className="rounded-full md:hidden"
                       onClick={() => addItem(product)}
                     >
@@ -209,15 +209,15 @@ export function Products() {
           })}
         </div>
       </div>
-      
+
       {/* Recently Viewed */}
       {recentlyViewedItems.length > 0 && (
         <div className="container mx-auto px-4 md:px-6 mt-20 pt-10 border-t border-border">
           <h3 className="text-2xl font-bold mb-6">Sản Phẩm Vừa Xem</h3>
           <div className="flex gap-4 overflow-x-auto pb-4 snap-x">
             {recentlyViewedItems.map((item) => (
-              <div 
-                key={`recent-${item.id}`} 
+              <div
+                key={`recent-${item.id}`}
                 className="shrink-0 w-[180px] sm:w-[220px] bg-background border border-border rounded-xl p-4 cursor-pointer snap-start hover:border-primary/50 transition-colors"
                 onClick={() => {
                   setSelectedProduct(item);
@@ -237,10 +237,10 @@ export function Products() {
         </div>
       )}
 
-      <ProductModal 
-        product={selectedProduct} 
-        isOpen={!!selectedProduct} 
-        onClose={() => setSelectedProduct(null)} 
+      <ProductModal
+        product={selectedProduct}
+        isOpen={!!selectedProduct}
+        onClose={() => setSelectedProduct(null)}
       />
     </section>
   );
