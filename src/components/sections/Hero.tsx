@@ -95,9 +95,6 @@ export function Hero() {
 
           {/* Image with Floating Badges */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
             style={{ y: imgY }}
             className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full"
           >
