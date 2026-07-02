@@ -75,3 +75,7 @@ https://helicorp-test-ph4t89c9s-capoocapos-projects.vercel.app/
 <img width="283" height="405" alt="2026-07-02-234255_hyprshot" src="https://github.com/user-attachments/assets/bd92b683-5ad1-4ba7-9609-d897dc273d13" />
 <img width="509" height="770" alt="2026-07-02-234327_hyprshot" src="https://github.com/user-attachments/assets/cf6a50b2-7580-477c-8021-7334ae47dcf3" />
 
+### check performance
+https://pagespeed.web.dev/
+<img width="1106" height="781" alt="2026-07-03-002241_hyprshot" src="https://github.com/user-attachments/assets/4409f371-5895-4a33-8ed1-96bae8d4339c" />
+<img width="1195" height="772" alt="2026-07-03-002233_hyprshot" src="https://github.com/user-attachments/assets/7e1c3a96-5e9a-42dd-8a2c-65141c928ee3" />
