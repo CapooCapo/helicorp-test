@@ -70,8 +70,7 @@ https://helicorp-test-ph4t89c9s-capoocapos-projects.vercel.app/
 
 <img width="1719" height="804" alt="2026-07-02-234007_hyprshot" src="https://github.com/user-attachments/assets/d0c4b0a4-f780-44b8-bdf3-afd817b2da1d" />
 <img width="1694" height="781" alt="2026-07-02-233955_hyprshot" src="https://github.com/user-attachments/assets/0d6fa503-5011-4509-a212-1e1dcf81eae0" />
-<img width="1126" height="842" alt="2026-07-02-234100_hyprshot" src="https://github.com/user-attachments/assets/1c7e4fc7-fd00-4738-8689-5a742cfe5caa" />
-<img width="699" height="687" alt="2026-07-02-234225_hyprshot" src="https://github.com/user-attachments/assets/cfdece21-8c6e-4ca1-8ba4-376ac0efe4be" />
+<img width="1282" height="924" alt="2026-07-02-235637_hyprshot" src="https://github.com/user-attachments/assets/c9339d96-aa39-46c5-9767-0005d362e3ee" />
 <img width="293" height="399" alt="2026-07-02-234246_hyprshot" src="https://github.com/user-attachments/assets/ee23da2f-7bbd-422a-8683-cdde5e09d206" />
 <img width="283" height="405" alt="2026-07-02-234255_hyprshot" src="https://github.com/user-attachments/assets/bd92b683-5ad1-4ba7-9609-d897dc273d13" />
 <img width="509" height="770" alt="2026-07-02-234327_hyprshot" src="https://github.com/user-attachments/assets/cf6a50b2-7580-477c-8021-7334ae47dcf3" />
