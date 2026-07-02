@@ -6,6 +6,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CartSidebar } from "@/components/ecommerce/CartSidebar";
 import { Chatbot } from "@/components/chatbot/Chatbot";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -61,6 +62,7 @@ export default function RootLayout({
           <Footer />
           <CartSidebar />
           <Chatbot />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
