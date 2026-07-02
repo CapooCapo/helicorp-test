@@ -58,7 +58,7 @@ export function FAQ() {
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="flex items-center justify-between w-full p-6 text-left"
+                  className="flex items-center justify-between w-full p-6 text-left cursor-pointer"
                 >
                   <span className="font-semibold text-lg">{faq.question}</span>
                   <ChevronDown 

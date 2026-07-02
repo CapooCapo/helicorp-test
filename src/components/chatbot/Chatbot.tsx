@@ -115,7 +115,7 @@ export function Chatbot() {
       {/* Floating Toggle Button */}
       <motion.button
         className={cn(
-          "fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center hover:scale-110 transition-transform focus:outline-none",
+          "fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center hover:scale-110 transition-transform focus:outline-none cursor-pointer",
           isOpen && "hidden"
         )}
         onClick={() => setIsOpen(true)}
@@ -178,7 +178,7 @@ export function Chatbot() {
                       <button
                         key={idx}
                         onClick={() => handleSuggestedClick(q)}
-                        className="text-xs bg-background border border-border rounded-full px-3 py-1.5 hover:bg-primary hover:text-primary-foreground transition-colors"
+                        className="text-xs bg-background border border-border rounded-full px-3 py-1.5 hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
                       >
                         {q}
                       </button>
