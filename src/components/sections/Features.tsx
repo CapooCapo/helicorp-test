@@ -58,7 +58,7 @@ export function Features() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
           >
             Tại Sao Chọn <span className="text-primary">Helicorp</span>?
@@ -66,7 +66,7 @@ export function Features() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-foreground"
           >
@@ -82,7 +82,7 @@ export function Features() {
                 key={feature.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px -50px 0px" }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
               >
                 <Card className="h-full border-border hover:border-primary/50 transition-colors duration-300 hover:shadow-md group">

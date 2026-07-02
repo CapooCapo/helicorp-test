@@ -45,7 +45,7 @@ export function Specs() {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             className="text-3xl md:text-5xl font-bold tracking-tight mb-4"
           >
             Sự Khác Biệt <span className="text-primary">Vượt Trội</span>
@@ -53,7 +53,7 @@ export function Specs() {
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             transition={{ delay: 0.1 }}
             className="text-lg text-muted-foreground"
           >
@@ -64,7 +64,7 @@ export function Specs() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "0px 0px -50px 0px" }}
           transition={{ delay: 0.2, duration: 0.5 }}
           className="overflow-x-auto"
         >

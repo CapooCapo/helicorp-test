@@ -91,6 +91,7 @@ export function Hero() {
                 src="/images/hero.png"
                 alt="Helicorp Premium Health Products"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover object-center"
                 priority
               />

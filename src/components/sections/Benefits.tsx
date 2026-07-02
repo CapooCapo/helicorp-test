@@ -24,7 +24,7 @@ export function Benefits() {
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             transition={{ duration: 0.7 }}
             className="relative"
           >
@@ -36,6 +36,7 @@ export function Benefits() {
                 src="/images/hero.png" // Reusing hero image or another placeholder
                 alt="Health Benefits"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                 className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
@@ -45,7 +46,7 @@ export function Benefits() {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "0px 0px -50px 0px" }}
               transition={{ delay: 0.3, duration: 0.5 }}
               className="absolute bottom-8 -right-4 sm:-right-8 bg-background p-6 rounded-2xl shadow-xl border border-border"
             >
@@ -58,7 +59,7 @@ export function Benefits() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "0px 0px -50px 0px" }}
             transition={{ duration: 0.7 }}
             className="space-y-8"
           >
@@ -78,7 +79,7 @@ export function Benefits() {
                   key={index}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "0px 0px -50px 0px" }}
                   transition={{ delay: 0.2 + index * 0.1, duration: 0.4 }}
                   className="flex items-start gap-3"
                 >

@@ -87,7 +87,7 @@ export function Products() {
                 key={product.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px -50px 0px" }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="group relative bg-background rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300"
               >
@@ -104,6 +104,7 @@ export function Products() {
                     alt={product.name}
                     width={200}
                     height={200}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     className="object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                   

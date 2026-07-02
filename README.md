@@ -51,27 +51,19 @@ A modern, high-performance, and SEO-optimized landing page built for Healthy Liv
 
 ## 📦 Deployment Instructions
 
-The application is optimized and ready to be deployed to **Vercel**, **Netlify**, or **Cloudflare Pages**.
-
-### Vercel (Recommended)
-1. Push the code to a GitHub repository.
-2. Log in to [Vercel](https://vercel.com/) and click **Add New Project**.
-3. Select your GitHub repository.
-4. Framework Preset will automatically be detected as `Next.js`.
-5. Click **Deploy**. Vercel will handle the build process and serve the application globally.
-
 ### Docker / Custom Server
 If deploying to a custom VPS (e.g., EC2, DigitalOcean):
 ```bash
-npm run build
-npm run start
+### command
+docker build <projectname> .
+docker run -p 3000:3000 <projectname>
+## ex: 
+docker build helicorp .
+docker run -p 3000:3000 helicorp
 ```
 
-## 🔮 Future Improvements (Scalability)
+### this is the url of the deploy app
 
-- **Backend Integration:** Connect the Mini E-commerce (Cart, Favorites) and Newsletter forms to a backend (Supabase, Firebase, or custom Node.js/Django API).
-- **Payment Gateway:** Integrate Stripe, VNPay, or MoMo for real checkouts.
-- **AI Chatbot:** Replace the simulated chatbot responses with OpenAI API or Gemini API integration for intelligent customer support.
-- **Product Reviews System:** Implement a database for real user reviews and ratings.
-- **i18n (Internationalization):** Add multi-language support (e.g., `next-intl`) to fully support the VN | EN toggle in the footer.
-- **Analytics:** Integrate Google Analytics, Vercel Web Vitals, or PostHog to track user events (add to cart, chatbot usage, scroll depth).
+https://helicorp-test-ph4t89c9s-capoocapos-projects.vercel.app/
+
+
