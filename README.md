@@ -33,7 +33,7 @@ A modern, high-performance, and SEO-optimized landing page built for Healthy Liv
 1. **Get a Gemini API Key:**
    Get a free API key from [Google AI Studio](https://aistudio.google.com/). Create a `.env.local` file in the root directory and add:
    ```env
-   GEMINI_API_KEY=your_api_key_here
+   NEXT_PUBLIC_GEMINI_API_KEY=your_api_key_here
    ```
 
 2. **Install dependencies:**

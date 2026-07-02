@@ -52,9 +52,9 @@ Quy tắc:
 Nếu không biết câu trả lời thì lịch sự từ chối và khuyên khách hàng gọi hotline.`;
 
 export async function askGemini(history: ChatMessage[]): Promise<string> {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
   if (!apiKey) {
-    throw new Error("Missing GEMINI_API_KEY in environment variables.");
+    throw new Error("We are apologize, the AI assistant is currently unavailable. Please try again later.");
   }
 
   const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
