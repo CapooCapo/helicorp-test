@@ -66,6 +66,9 @@ docker run -p 3000:3000 helicorp
 
 https://helicorp-test-ph4t89c9s-capoocapos-projects.vercel.app/
 
+### figma links
+https://www.figma.com/make/jNbs1Wc8pMlLHo62uFeIGH/helicorp_test?t=g8itDm8yydAziZIk-20&fullscreen=1
+
 ### demo images
 
 <img width="1719" height="804" alt="2026-07-02-234007_hyprshot" src="https://github.com/user-attachments/assets/d0c4b0a4-f780-44b8-bdf3-afd817b2da1d" />
